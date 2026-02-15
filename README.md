@@ -14,13 +14,14 @@ Ouvrez [http://localhost:3000](http://localhost:3000).
 
 ## Scripts
 
-| Commande        | Description                    |
-|-----------------|--------------------------------|
-| `npm run dev`   | Serveur de développement       |
-| `npm run build` | Build de production + export dans `out/` |
-| `npm run start` | Servir le build (après `build`) |
-| `npm run lint`  | Vérification ESLint            |
-| `npm run deploy`| Build puis déploiement sur la branche `gh-pages` |
+| Commande          | Description                                          |
+|-------------------|------------------------------------------------------|
+| `npm run dev`     | Serveur de développement                             |
+| `npm run build`   | Build de production → génère le dossier `out/`       |
+| `npm run lint`    | Vérification ESLint                                  |
+| `npm run deploy`  | Build puis push de `out/` vers GitHub Pages (manuel) |
+
+> **Note :** `npm run start` n’est pas utilisé pour ce projet. Avec `output: export`, Next.js génère des fichiers statiques. Pour tester en local après un build : `npx serve@latest out`.
 
 ## Modifier le contenu (data & config)
 
@@ -63,20 +64,20 @@ Placez le fichier (ex. `nom-fichier.jpg`) dans **`public/`**. Le composant `Link
 └── theme/               # Thème MUI (dark)
 ```
 
-## Déploiement
+## Déploiement (GitHub Pages)
 
-### GitHub Pages (Actions)
+### Automatique (recommandé)
 
-1. **Settings → Pages → Source** : **GitHub Actions**.
-2. À chaque push sur `main`, le workflow `.github/workflows/deploy.yml` build et déploie le site.
-3. Si le site est sous une sous-URL (ex. `https://user.github.io/gb`), définir **Secrets and variables → Actions** : `NEXT_PUBLIC_BASE_PATH=/gb` (ou la valeur de `homepage` dans `package.json`).
+1. **Settings → Pages → Source** : **GitHub Actions**
+2. À chaque push sur `main`, le workflow `.github/workflows/deploy.yml` build et déploie automatiquement le site
+3. Si le site est sous une sous-URL (ex. `https://user.github.io/gb`), configurer **Secrets and variables → Actions** : `NEXT_PUBLIC_BASE_PATH=/gb`
 
-### Branche gh-pages
+### Manuel
 
-1. **Settings → Pages → Source** : **Deploy from a branch**, branche **gh-pages**, dossier **/ (root)**.
-2. En local : `npm run deploy` (build + push de `out/` sur `gh-pages`).
+- **Settings → Pages → Source** : **Deploy from a branch**, branche **gh-pages**, dossier **/ (root)**
+- En local : `npm run deploy` (build + push de `out/` sur la branche `gh-pages`)
 
-Vérifier que **`next.config.js`** et **`lib/basePath.ts`** utilisent le même `basePath` que votre URL (ex. `/gb` si le dépôt s’appelle `gb`).
+> Le `basePath` dans `next.config.js` doit correspondre à l’URL du dépôt (ex. `/gb`).
 
 ## Prérequis
 

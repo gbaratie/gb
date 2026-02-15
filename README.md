@@ -1,14 +1,12 @@
-# Starter Front – Next.js + MUI
+# Guillaume Baratier – Portfolio
 
-Site vitrine type portfolio, prêt à servir de base pour vos projets front. Construit avec **Next.js 14**, **React 18**, **TypeScript** et **Material UI (MUI)**. Export statique possible pour GitHub Pages ou tout hébergement de fichiers statiques.
+Site vitrine personnel (projets, mes coups de cœur). Construit avec **Next.js 14**, **React 18**, **TypeScript** et **Material UI (MUI)**. Thème sombre, export statique pour GitHub Pages ou hébergement de fichiers statiques.
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/gbaratie/front_sandbox_MUI.git
-cd front_sandbox_MUI
 npm install
-cp .env.example .env   # optionnel : personnaliser basePath et nom du site
+cp .env.example .env   # optionnel : basePath et nom du site
 npm run dev
 ```
 
@@ -16,69 +14,70 @@ Ouvrez [http://localhost:3000](http://localhost:3000).
 
 ## Scripts
 
-| Commande        | Description                    |
-|-----------------|--------------------------------|
-| `npm run dev`   | Serveur de développement       |
-| `npm run build` | Build de production + export dans `out/` |
-| `npm run start` | Servir le build (après `build`) |
-| `npm run lint`   | Vérification ESLint            |
-| `npm run deploy`| Build puis déploiement sur la branche `gh-pages` |
+| Commande          | Description                                          |
+|-------------------|------------------------------------------------------|
+| `npm run dev`     | Serveur de développement                             |
+| `npm run build`   | Build de production → génère le dossier `out/`       |
+| `npm run lint`    | Vérification ESLint                                  |
+| `npm run deploy`  | Build puis push de `out/` vers GitHub Pages (manuel) |
+
+> **Note :** `npm run start` n’est pas utilisé pour ce projet. Avec `output: export`, Next.js génère des fichiers statiques. Pour tester en local après un build : `npx serve@latest out`.
+
+## Modifier le contenu (data & config)
+
+Tout le contenu éditable se trouve dans **`data/`** et **`config/`** :
+
+| Fichier | Rôle |
+|---------|------|
+| **`config/site.ts`** | Nom du site, libellés et URLs de la navigation (Accueil, Projets, Mes coups de cœur). |
+| **`data/profile.ts`** | Nom, headline et bio courte (affichés sur l’accueil). |
+| **`data/projects.ts`** | Liste des projets. Chaque projet : `title`, `description`, `category` (`'pro'` ou `'side'`), `tags`, optionnellement `links` (label + url) et `image` (src + alt). |
+| **`data/selection.ts`** | Items de la section « Initiatives inspirantes » (page Mes coups de cœur) : `title`, `description`, `tags`, `url`, optionnellement `image`. |
+| **`data/amis.ts`** | Items de la section « Projet de mes amis » (page Mes coups de cœur), même structure que la sélection. |
+| **`data/types.ts`** | Types TypeScript `Project` et `LinkItem` ; à consulter pour ajouter des champs. |
+
+**Images** : déposer les fichiers dans **`public/`**. En production avec sous-chemins (ex. GitHub Pages), le préfixe est géré par `lib/basePath.ts` et `NEXT_PUBLIC_BASE_PATH`.
+
+**Ajouter des photos aux coups de cœur (amis ou initiatives)** : dans `data/amis.ts` ou `data/selection.ts`, ajoutez pour chaque item la propriété optionnelle `image` :
+
+```ts
+import { basePath } from '@/lib/basePath';
+
+// Dans un item :
+image: { src: `${basePath}/nom-fichier.jpg`, alt: 'Description courte pour l’accessibilité' }
+```
+
+Placez le fichier (ex. `nom-fichier.jpg`) dans **`public/`**. Le composant `LinkCard` affichera l’image en en-tête de la carte.
+
+**Thème** (couleurs, typo) : **`theme/theme.ts`**.
 
 ## Structure du projet
 
 ```
 ├── .github/workflows/   # CI/CD (déploiement GitHub Pages)
-├── components/         # Composants React réutilisables
-├── config/             # Configuration du site (titre, navigation)
-├── data/               # Données (ex. projets)
-├── lib/                # Utilitaires (basePath, etc.)
-├── pages/              # Pages Next.js
-├── public/             # Assets statiques (images)
-└── theme/              # Thème MUI
+├── components/          # Layout, ProjectCard, LinkCard
+├── config/              # site.ts (titre, nav)
+├── data/                # types, profile, projects, selection, amis
+├── lib/                 # basePath
+├── pages/               # index, projets, coups-de-coeur
+├── public/              # Assets statiques (images)
+└── theme/               # Thème MUI (dark)
 ```
 
-## Personnalisation
+## Déploiement (GitHub Pages)
 
-### Variables d’environnement
+### Automatique (recommandé)
 
-Copiez `.env.example` en `.env` et ajustez si besoin :
+1. **Settings → Pages → Source** : **GitHub Actions**
+2. À chaque push sur `main`, le workflow `.github/workflows/deploy.yml` build et déploie automatiquement le site
+3. Si le site est sous une sous-URL (ex. `https://user.github.io/gb`), configurer **Secrets and variables → Actions** : `NEXT_PUBLIC_BASE_PATH=/gb`
 
-| Variable | Description |
-|----------|-------------|
-| `NEXT_PUBLIC_BASE_PATH` | Chemin de base en production (ex. `/front_sandbox_MUI` pour GitHub Pages). Vide = racine. |
-| `NEXT_PUBLIC_SITE_NAME` | Nom du site (header, titres de pages). |
+### Manuel
 
-### Contenu et style
+- **Settings → Pages → Source** : **Deploy from a branch**, branche **gh-pages**, dossier **/ (root)**
+- En local : `npm run deploy` (build + push de `out/` sur la branche `gh-pages`)
 
-- **Navigation** : `config/site.ts` (libellés et liens des onglets).
-- **Projets** : `data/projects.ts`.
-- **Thème** (couleurs, typo) : `theme/theme.ts`.
-- **Images** : déposer les fichiers dans `public/` et les référencer par leur chemin (ex. `/mon-image.jpg` ou avec `basePath` en prod).
-
-### Path aliases
-
-Les imports peuvent utiliser l’alias `@/` (racine du projet) :
-
-```ts
-import Layout from '@/components/Layout';
-import { siteName } from '@/config/site';
-```
-
-## Déploiement sur GitHub Pages
-
-Deux options.
-
-### Option 1 : GitHub Actions (recommandé)
-
-1. Dans le dépôt : **Settings → Pages → Source** : **GitHub Actions**.
-2. À chaque push sur `main`, le workflow `.github/workflows/deploy.yml` build le site et le déploie.
-3. Si le site est sous une sous-URL (ex. `https://user.github.io/front_sandbox_MUI`), définir `NEXT_PUBLIC_BASE_PATH=/front_sandbox_MUI` dans **Settings → Secrets and variables → Actions** (ou dans un fichier `.env` utilisé en CI), ou laisser la valeur par défaut déjà prévue dans le code.
-
-### Option 2 : Branche `gh-pages`
-
-1. **Settings → Pages → Source** : **Deploy from a branch**.
-2. **Branch** : `gh-pages`, dossier **/ (root)**.
-3. En local : `npm run deploy` (build + push du contenu de `out/` sur `gh-pages`).
+> Le `basePath` dans `next.config.js` doit correspondre à l’URL du dépôt (ex. `/gb`).
 
 ## Prérequis
 
@@ -87,6 +86,4 @@ Deux options.
 
 ## Licence
 
-Ce projet est distribué sous la [licence MIT](LICENSE). Vous êtes libre de l’utiliser, le modifier et le redistribuer sous réserve d’inclure la notice de copyright et le texte de la licence dans les copies.
-
-Les dépendances (Next.js, MUI, React, etc.) ont leurs propres licences, en général également permissives (MIT ou équivalent) ; voir `package.json` et les dépôts respectifs pour les détails.
+MIT (voir [LICENSE](LICENSE)).

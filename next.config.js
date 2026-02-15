@@ -9,10 +9,10 @@ const nextConfig = {
   // Base path for GitHub Pages or subpath deployment (override via NEXT_PUBLIC_BASE_PATH).
   basePath:
     process.env.NEXT_PUBLIC_BASE_PATH ||
-    (process.env.NODE_ENV === 'production' ? '/front_sandbox_MUI' : ''),
+    (process.env.NODE_ENV === 'production' ? '/gb' : ''),
   assetPrefix:
     process.env.NEXT_PUBLIC_BASE_PATH ||
-    (process.env.NODE_ENV === 'production' ? '/front_sandbox_MUI' : ''),
+    (process.env.NODE_ENV === 'production' ? '/gb' : ''),
 };
 
 module.exports = nextConfig;

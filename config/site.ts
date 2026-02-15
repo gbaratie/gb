@@ -1,10 +1,10 @@
 /**
- * Central site configuration: title, navigation.
- * Change these values to adapt the starter to your project.
+ * Configuration centrale du site : titre, navigation.
+ * Modifier ces valeurs pour adapter le site à votre projet.
  */
 
 export const siteName =
-  process.env.NEXT_PUBLIC_SITE_NAME ?? 'Mon Portfolio';
+  process.env.NEXT_PUBLIC_SITE_NAME ?? 'Guillaume Baratier';
 
 export interface NavItem {
   label: string;
@@ -13,6 +13,6 @@ export interface NavItem {
 
 export const navItems: NavItem[] = [
   { label: 'Accueil', href: '/' },
-  { label: 'Projets', href: '/projects' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Projets', href: '/projets' },
+  { label: 'Mes coups de cœur', href: '/coups-de-coeur' },
 ];

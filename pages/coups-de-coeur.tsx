@@ -1,0 +1,65 @@
+import Head from 'next/head';
+import { Grid, Typography, Box } from '@mui/material';
+import Layout from '@/components/Layout';
+import LinkCard from '@/components/LinkCard';
+import { selectionItems } from '@/data/selection';
+import { amisItems } from '@/data/amis';
+import { siteName } from '@/config/site';
+
+/**
+ * Page Mes coups de cœur : deux sections — Initiatives inspirantes & Projet de mes amis.
+ */
+export default function CoupsDeCoeur() {
+  return (
+    <Layout>
+      <Head>
+        <title>{`Mes coups de cœur – ${siteName}`}</title>
+        <meta
+          name="description"
+          content="Initiatives inspirantes et projets de mes amis : Enerfip, Coral Gardeners, Colco, Chalong Bay, Saneha…"
+        />
+      </Head>
+
+      <Typography variant="h2" component="h1" gutterBottom>
+        Mes coups de cœur
+      </Typography>
+      <Typography variant="body1" color="text.secondary" paragraph>
+        Initiatives et projets auxquels je prête attention ou que j’aime mettre en avant.
+      </Typography>
+
+      {/* Section 1 : Initiatives inspirantes */}
+      <Box component="section" sx={{ mt: 6 }}>
+        <Typography variant="h3" component="h2" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600 }}>
+          Initiatives inspirantes
+        </Typography>
+        <Typography variant="body2" color="text.secondary" paragraph>
+          Plateformes et initiatives que je soutiens : impact, énergie, solidarité.
+        </Typography>
+        <Grid container spacing={3}>
+          {selectionItems.map((item) => (
+            <Grid item xs={12} sm={6} md={4} key={item.id}>
+              <LinkCard item={item} />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
+      {/* Section 2 : Projet de mes amis */}
+      <Box component="section" sx={{ mt: 8 }}>
+        <Typography variant="h3" component="h2" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600 }}>
+          Projet de mes amis
+        </Typography>
+        <Typography variant="body2" color="text.secondary" paragraph>
+          Partenaires et projets proches : transition, impact, initiatives durables.
+        </Typography>
+        <Grid container spacing={3}>
+          {amisItems.map((item) => (
+            <Grid item xs={12} sm={6} md={4} key={item.id}>
+              <LinkCard item={item} />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </Layout>
+  );
+}

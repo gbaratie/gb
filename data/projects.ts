@@ -116,6 +116,6 @@ export const projects: Project[] = [
     category: 'side',
     tags: ['Next.js', 'React', 'MUI'],
     links: [{ label: 'Voir le template', url: 'https://gbaratie.github.io/front_sandbox_MUI/' }],
-    image: { src: `${basePath}/Portfolio2.png`, alt: 'Portfolio' },
+    image: { src: `${basePath}/portfolio.png`, alt: 'Portfolio' },
   },
 ];

@@ -45,7 +45,7 @@ export default function Projets() {
       <ProjectScopeTabs value={scope} onChange={handleScopeChange} />
 
       {/* Section 1 : Projets professionnels */}
-      <Box component="section" id="pro" sx={{ mt: 6, scrollMarginTop: 24 }}>
+      <Box component="section" id="pro" sx={{ mt: 6, scrollMarginTop: 80 }}>
         <Typography variant="h3" component="h2" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600 }}>
           Projets professionnels
         </Typography>
@@ -70,7 +70,7 @@ export default function Projets() {
       </Box>
 
       {/* Section 2 : Side projects */}
-      <Box component="section" id="side" sx={{ mt: 8, scrollMarginTop: 24 }}>
+      <Box component="section" id="side" sx={{ mt: 8, scrollMarginTop: 80 }}>
         <Typography variant="h3" component="h2" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600 }}>
           Side projects
         </Typography>

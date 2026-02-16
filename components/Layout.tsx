@@ -1,5 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Toolbar, Tabs, Tab, Typography, Container } from '@mui/material';
+import {
+  AppBar,
+  Toolbar,
+  Tabs,
+  Tab,
+  Typography,
+  Container,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { siteName, navItems } from '@/config/site';
@@ -15,17 +31,22 @@ function getTabValueFromPath(pathname: string): number {
 
 /**
  * Layout principal : barre de navigation persistante et conteneur.
- * Le thème sombre est appliqué via le ThemeProvider.
+ * En mobile : menu burger. En desktop : onglets.
  */
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const router = useRouter();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [tabValue, setTabValue] = useState<number>(() =>
     getTabValueFromPath(router.pathname)
   );
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setTabValue(getTabValueFromPath(router.pathname));
   }, [router.pathname]);
+
+  const handleCloseMobileMenu = () => setMobileMenuOpen(false);
 
   return (
     <>
@@ -34,23 +55,60 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             {siteName}
           </Typography>
-          <Tabs
-            value={tabValue}
-            onChange={(_, newValue) => setTabValue(newValue)}
-            textColor="inherit"
-            indicatorColor="secondary"
-            variant="scrollable"
-            scrollButtons="auto"
-            allowScrollButtonsMobile
-          >
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} passHref legacyBehavior>
-                <Tab label={item.label} component="a" />
-              </Link>
-            ))}
-          </Tabs>
+          {isMobile && (
+            <IconButton
+              color="inherit"
+              aria-label="ouvrir le menu"
+              edge="end"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
+          {!isMobile && (
+            <Tabs
+              value={tabValue}
+              onChange={(_, newValue) => setTabValue(newValue)}
+              textColor="inherit"
+              indicatorColor="secondary"
+            >
+              {navItems.map((item) => (
+                <Link key={item.href} href={item.href} passHref legacyBehavior>
+                  <Tab label={item.label} component="a" />
+                </Link>
+              ))}
+            </Tabs>
+          )}
         </Toolbar>
       </AppBar>
+
+      <Drawer
+        anchor="right"
+        open={mobileMenuOpen}
+        onClose={handleCloseMobileMenu}
+        ModalProps={{ keepMounted: true }}
+        PaperProps={{
+          sx: { minWidth: 240, pt: 2 },
+        }}
+      >
+        <List>
+          {navItems.map((item) => (
+            <ListItem key={item.href} disablePadding>
+              <Link href={item.href} passHref legacyBehavior>
+                <ListItemButton
+                  component="a"
+                  selected={router.pathname === item.href}
+                  onClick={handleCloseMobileMenu}
+                  sx={{ py: 1.5 }}
+                >
+                  <ListItemText primary={item.label} />
+                </ListItemButton>
+              </Link>
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+
       <Toolbar />
       <Container
         maxWidth="lg"

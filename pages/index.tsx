@@ -25,7 +25,7 @@ export default function Home() {
       </Head>
 
       {/* Hero */}
-      <Box sx={{ textAlign: { xs: 'center', md: 'left' }, mb: 8 }}>
+      <Box sx={{ textAlign: { xs: 'center', md: 'left' }, mb: { xs: 6, md: 10 } }}>
         <Typography variant="h1" component="h1" gutterBottom>
           {profile.name}
         </Typography>
@@ -36,11 +36,7 @@ export default function Home() {
           {profile.bio}
         </Typography>
         <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' } }}>
-          <Link href="/projets" passHref legacyBehavior>
-            <Button variant="contained" color="primary" component="a" size="large">
-              Voir mes projets
-            </Button>
-          </Link>
+
           <Button
             variant="outlined"
             color="primary"
@@ -69,18 +65,18 @@ export default function Home() {
       </Box>
 
       {/* 2 teasers */}
-      <Typography variant="h2" component="h2" gutterBottom sx={{ mb: 3 }}>
+      <Typography variant="h2" component="h2" gutterBottom sx={{ mb: 4, mt: 1 }}>
         Découvrir
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
           <Card sx={{ height: '100%' }}>
-            <CardContent>
+            <CardContent sx={{ py: 3, '&:last-child': { pb: 3 } }}>
               <Typography variant="h6" gutterBottom>
                 Projets
               </Typography>
               <Typography variant="body2" color="text.secondary" paragraph>
-                Projets professionnels et side projects : blockchain, IA, conseil et open source.
+                Projets professionnels et side projects : Conseil en nouvelles technologies et projets personnels.
               </Typography>
               <Link href="/projets" passHref legacyBehavior>
                 <Button variant="outlined" color="primary" component="a" size="small">
@@ -92,12 +88,12 @@ export default function Home() {
         </Grid>
         <Grid item xs={12} md={6}>
           <Card sx={{ height: '100%' }}>
-            <CardContent>
+            <CardContent sx={{ py: 3, '&:last-child': { pb: 3 } }}>
               <Typography variant="h6" gutterBottom>
                 Mes coups de cœur
               </Typography>
               <Typography variant="body2" color="text.secondary" paragraph>
-                Initiatives inspirantes et projets de mes amis que j’aime mettre en avant.
+                Initiatives inspirantes et projets de mes amis
               </Typography>
               <Link href="/coups-de-coeur" passHref legacyBehavior>
                 <Button variant="outlined" color="primary" component="a" size="small">

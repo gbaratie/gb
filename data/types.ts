@@ -30,5 +30,7 @@ export interface LinkItem {
   description: string;
   tags: string[];
   url: string;
+  /** URL optionnelle pour un bouton « Acheter » (ex. page boutique). */
+  buyUrl?: string;
   image?: ImageRef;
 }

@@ -55,7 +55,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Container
         maxWidth="lg"
         sx={{
-          paddingY: 4,
+          pt: { xs: 5, sm: 8 },
+          pb: { xs: 5, sm: 8 },
           minHeight: 'calc(100vh - 64px)',
           bgcolor: 'background.default',
         }}

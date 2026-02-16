@@ -9,6 +9,7 @@ import {
   Stack,
 } from '@mui/material';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import type { LinkItem } from '@/data/types';
 
 interface LinkCardProps {
@@ -19,7 +20,7 @@ interface LinkCardProps {
  * Carte pour un lien externe (Sélection / Amis) : titre, description, tags, bouton vers l’URL.
  */
 const LinkCard: React.FC<LinkCardProps> = ({ item }) => {
-  const { title, description, tags, url, image } = item;
+  const { title, description, tags, url, buyUrl, image } = item;
 
   return (
     <Card
@@ -55,18 +56,32 @@ const LinkCard: React.FC<LinkCardProps> = ({ item }) => {
         <Typography variant="body2" color="text.secondary" sx={{ flexGrow: 1 }}>
           {description}
         </Typography>
-        <Button
-          component="a"
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="outlined"
-          color="primary"
-          endIcon={<OpenInNewIcon />}
-          sx={{ mt: 2, alignSelf: 'flex-start' }}
-        >
-          Visiter
-        </Button>
+        <Stack direction="row" spacing={1} sx={{ mt: 2 }} flexWrap="wrap">
+          <Button
+            component="a"
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="outlined"
+            color="primary"
+            endIcon={<OpenInNewIcon />}
+          >
+            Visiter
+          </Button>
+          {buyUrl && (
+            <Button
+              component="a"
+              href={buyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outlined"
+              color="primary"
+              endIcon={<ShoppingCartIcon />}
+            >
+              Acheter
+            </Button>
+          )}
+        </Stack>
       </CardContent>
     </Card>
   );

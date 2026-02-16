@@ -47,10 +47,10 @@ export default function CoupsDeCoeur() {
       {/* Section 2 : Projet de mes amis */}
       <Box component="section" sx={{ mt: 8 }}>
         <Typography variant="h3" component="h2" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600 }}>
-          Projet de mes amis
+          Projets de mes amis
         </Typography>
         <Typography variant="body2" color="text.secondary" paragraph>
-          Partenaires et projets proches : transition, impact, initiatives durables.
+          Projets de mes amis et ma famille : A consommer sans modération 
         </Typography>
         <Grid container spacing={3}>
           {amisItems.map((item) => (

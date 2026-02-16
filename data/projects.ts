@@ -5,33 +5,89 @@ export type { Project } from '@/data/types';
 
 export const projects: Project[] = [
   {
-    id: 'blockchain-poc',
-    title: 'Proof of Concept Blockchain',
+    id: 'agent-conversationnel-bank-assurance',
+    title: 'Agents conversationnels Banque & Assurance',
     description:
-      "Conception et pilotage d'un POC blockchain pour la traçabilité de chaîne d'approvisionnement dans le secteur retail.",
+      "Conception et déploiement d'agents conversationnels pour Orange Bank et COVEA.",
     category: 'pro',
-    tags: ['blockchain', 'supply chain', 'IBM'],
+    tags: ['Orange Bank', 'COVEA', 'Machine Learning'],
     links: [],
-    image: { src: `${basePath}/city.jpg`, alt: 'Schéma chaîne de valeur' },
   },
   {
-    id: 'ia-documentaire',
-    title: 'Assistant IA documentaire',
-    description:
-      "Mise en place d'un assistant conversationnel pour l'exploration de bases documentaires internes (RAG, LLM).",
+    id: 'email-analyser-bpce',
+    title: 'Email Analyser',
+    description: "Solution d'analyse et de traitement des emails pour le groupe BPCE.",
     category: 'pro',
-    tags: ['IA', 'LLM', 'RAG', 'conseil'],
+    tags: ['BPCE', 'Machine Learning'],
     links: [],
-    image: { src: `${basePath}/tour.jpg`, alt: 'Interface assistant' },
   },
   {
-    id: 'transformation-digitale',
-    title: 'Transformation digitale',
-    description:
-      "Accompagnement d'une direction métier dans la définition de sa feuille de route digitale et le déploiement d'outils collaboratifs.",
+    id: 'voice-bot-covea',
+    title: 'Voice Bot',
+    description: "Mise en place d'assistants vocaux pour COVEA.",
     category: 'pro',
-    tags: ['transformation', 'agilité', 'conseil'],
-    image: { src: `${basePath}/cloche.jpg`, alt: 'Atelier stratégie' },
+    tags: ['COVEA', 'Machine Learning'],
+    links: [],
+  },
+  {
+    id: 'tracabilite-alimentaire',
+    title: 'Traçabilité alimentaire',
+    description:
+      "Blockchain pour la traçabilité de la chaîne d'approvisionnement alimentaire et textile chez Carrefour.",
+    category: 'pro',
+    tags: ['Carrefour', 'Blockchain'],
+    links: [],
+  },
+  {
+    id: 'tracabilite-energie',
+    title: "Traçabilité de l'énergie",
+    description:
+      "Développement de solutions blockchain pour assurer la traçabilité et la transparence des mécanismes de marché dans le secteur énergétique.",
+    category: 'pro',
+    tags: ['RTE', 'Enedis', 'Blockchain'],
+    links: [],
+  },
+  {
+    id: 'registre-commercial-blockchain',
+    title: 'Registre commercial sur blockchain',
+    description: "Implémentation d’une architecture blockchain assurant l’hébergement et l’intégrité de registres commerciaux administrés par le CNGTC.",
+    category: 'pro',
+    tags: ['CNGTC', 'Blockchain'],
+    links: [],
+  },
+  {
+    id: 'quantum-safe-bancaire',
+    title: 'Quantum Safe pour le monde bancaire',
+    description: "Étude et préparation à la cryptographie post-quantum dans le secteur bancaire.",
+    category: 'pro',
+    tags: ['Quantum'],
+    links: [],
+  },
+  {
+    id: 'genai-rag-loreal',
+    title: 'GenAI Services & plateforme RAG',
+    description:
+      "Mise en place de Services GenAI et d'une plateforme RAG pour L'Oréal.",
+    category: 'pro',
+    tags: ["L'Oréal", 'GenAI'],
+    links: [],
+  },
+  {
+    id: 'extraction-doc-credit-mutuel',
+    title: 'Extraction documentaire pour la GenAI',
+    description:
+      "Pipeline d'extraction et structuration de documents pour alimenter des use cases GenAI.",
+    category: 'pro',
+    tags: ['Crédit Mutuel', 'GenAI'],
+    links: [],
+  },
+  {
+    id: 'conversational-ai-cardif',
+    title: 'Conversational AI Platform',
+    description: "Plateforme d'assistants conversationnels et services GenAI pour CARDIF.",
+    category: 'pro',
+    tags: ['CARDIF', 'GenAI'],
+    links: [],
   },
   {
     id: 'sudoku',
@@ -39,7 +95,7 @@ export const projects: Project[] = [
     description:
       "Application web pour générer et jouer au Sudoku. Projet side pour pratiquer la logique et l'interface utilisateur.",
     category: 'side',
-    tags: ['JavaScript', 'jeu', 'side project'],
+    tags: ['JavaScript'],
     links: [{ label: 'Voir le projet', url: 'https://gbaratie.github.io/Sudoku/' }],
     image: { src: `${basePath}/sudoku.png`, alt: 'Sudoku' },
   },
@@ -49,7 +105,7 @@ export const projects: Project[] = [
     description:
       "Template pour créer rapidement des sites vitrines en React, Next.js et Material UI. Base du présent portfolio.",
     category: 'side',
-    tags: ['Next.js', 'React', 'MUI', 'template'],
+    tags: ['Next.js', 'React', 'MUI'],
     links: [{ label: 'Voir le template', url: 'https://gbaratie.github.io/front_sandbox_MUI/' }],
     image: { src: `${basePath}/Portfolio2.png`, alt: 'Portfolio' },
   },

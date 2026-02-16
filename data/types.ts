@@ -12,6 +12,8 @@ export interface ProjectLink {
 export interface ImageRef {
   src: string;
   alt: string;
+  /** Couleur de fond optionnelle (ex: 'white' pour logos sur fond transparent) */
+  background?: string;
 }
 
 export interface Project {

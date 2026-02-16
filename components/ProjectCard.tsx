@@ -34,13 +34,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       }}
     >
       {image && (
-        <CardMedia
-          component="img"
-          height="180"
-          image={image.src}
-          alt={image.alt}
-          sx={{ objectFit: 'cover' }}
-        />
+        <Box
+          sx={{
+            height: 180,
+            backgroundColor: image.background ?? 'transparent',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            overflow: 'hidden',
+            p: image.background ? 1 : 0,
+          }}
+        >
+          <CardMedia
+            component="img"
+            height="100%"
+            image={image.src}
+            alt={image.alt}
+            sx={{
+              objectFit: image.background ? 'contain' : 'cover',
+              maxHeight: 180,
+            }}
+          />
+        </Box>
       )}
       <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
         <Stack direction="row" spacing={1} sx={{ mb: 1 }} flexWrap="wrap" useFlexGap>

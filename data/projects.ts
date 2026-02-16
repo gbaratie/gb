@@ -117,5 +117,30 @@ export const projects: Project[] = [
     tags: ['Next.js', 'React', 'MUI'],
     links: [{ label: 'Voir le template', url: 'https://gbaratie.github.io/front_sandbox_MUI/' }],
     image: { src: `${basePath}/projets/portfolio.png`, alt: 'Portfolio' },
+  },{
+    id: 'PSL-Dauphine',
+    title: 'Professeur à Dauphine',
+    description:
+      "Animation d’un enseignement orienté sur les technologies de la 4ème révolution industrielle (IA, IoT, Blockchain, Big Data, Cloud) un semestre par an pour une classe de Master 2",
+    category: 'side',
+    tags: ['Enseignement', 'New technologies'],
+    image: { src: `${basePath}/projets/dauphine.jpg`, alt: 'Dauphine' },
+  },{
+    id: 'isep',
+    title: 'Administrateur ISEP',
+    description:
+      "Membre du conseil d'administration de l'ISEP.",
+    category: 'side',
+    tags: ['Enseignement', 'CA'],
+    image: { src: `${basePath}/projets/isep.png`, alt: 'Isep', background: 'white' },
+  },{
+    id: 'tdm',
+    title: 'Tour du Monde',
+    description:
+      "Voyage autour du monde en 2022-2023",
+    category: 'side',
+    tags: ['Voyage'],
+    links: [{ label: 'Voir le voyage', url: 'https://www.polarsteps.com/GuillaumeBaratier/5510476-world-trip-2022' }],
+    image: { src: `${basePath}/projets/tdm.png`, alt: 'TDM' },
   },
 ];

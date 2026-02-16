@@ -19,6 +19,9 @@ export interface Project {
   title: string;
   description: string;
   category: ProjectCategory;
+  /** Noms des clients (affichés avec un style distinct) */
+  clients?: string[];
+  /** Technologies et compétences */
   tags: string[];
   links?: ProjectLink[];
   image?: ImageRef;

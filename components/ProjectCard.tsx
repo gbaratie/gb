@@ -15,10 +15,10 @@ interface ProjectCardProps {
 }
 
 /**
- * Carte projet : titre, description, catégorie, tags, image optionnelle, liens.
+ * Carte projet : titre, description, clients (style distinct), technos, image optionnelle, liens.
  */
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const { title, description, category, tags, links, image } = project;
+  const { title, description, clients, tags, links, image } = project;
 
   return (
     <Card
@@ -43,14 +43,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         />
       )}
       <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-        <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
-          <Chip
-            label={category === 'pro' ? 'Pro' : 'Side'}
-            size="small"
-            color={category === 'pro' ? 'primary' : 'secondary'}
-            variant="outlined"
-          />
-          {tags.slice(0, 3).map((tag) => (
+        <Stack direction="row" spacing={1} sx={{ mb: 1 }} flexWrap="wrap" useFlexGap>
+          {clients?.map((client) => (
+            <Chip
+              key={client}
+              label={client}
+              size="small"
+              variant="outlined"
+              color="primary"
+              sx={{ fontSize: '0.75rem' }}
+            />
+          ))}
+          {tags.slice(0, 4).map((tag) => (
             <Chip key={tag} label={tag} size="small" variant="outlined" />
           ))}
         </Stack>

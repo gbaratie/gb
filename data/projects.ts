@@ -10,7 +10,8 @@ export const projects: Project[] = [
     description:
       "Conception et déploiement d'agents conversationnels pour Orange Bank et COVEA.",
     category: 'pro',
-    tags: ['Orange Bank', 'COVEA', 'Machine Learning'],
+    clients: ['Orange Bank', 'COVEA'],
+    tags: ['Machine Learning'],
     links: [],
   },
   {
@@ -18,7 +19,8 @@ export const projects: Project[] = [
     title: 'Email Analyser',
     description: "Solution d'analyse et de traitement des emails pour le groupe BPCE.",
     category: 'pro',
-    tags: ['BPCE', 'Machine Learning'],
+    clients: ['BPCE'],
+    tags: ['Machine Learning'],
     links: [],
   },
   {
@@ -26,7 +28,8 @@ export const projects: Project[] = [
     title: 'Voice Bot',
     description: "Mise en place d'assistants vocaux pour COVEA.",
     category: 'pro',
-    tags: ['COVEA', 'Machine Learning'],
+    clients: ['COVEA'],
+    tags: ['Machine Learning'],
     links: [],
   },
   {
@@ -35,7 +38,8 @@ export const projects: Project[] = [
     description:
       "Blockchain pour la traçabilité de la chaîne d'approvisionnement alimentaire et textile chez Carrefour.",
     category: 'pro',
-    tags: ['Carrefour', 'Blockchain'],
+    clients: ['Carrefour'],
+    tags: ['Blockchain'],
     links: [],
   },
   {
@@ -44,7 +48,8 @@ export const projects: Project[] = [
     description:
       "Développement de solutions blockchain pour assurer la traçabilité et la transparence des mécanismes de marché dans le secteur énergétique.",
     category: 'pro',
-    tags: ['RTE', 'Enedis', 'Blockchain'],
+    clients: ['RTE', 'Enedis'],
+    tags: ['Blockchain'],
     links: [],
   },
   {
@@ -52,7 +57,8 @@ export const projects: Project[] = [
     title: 'Registre commercial sur blockchain',
     description: "Implémentation d’une architecture blockchain assurant l’hébergement et l’intégrité de registres commerciaux administrés par le CNGTC.",
     category: 'pro',
-    tags: ['CNGTC', 'Blockchain'],
+    clients: ['CNGTC'],
+    tags: ['Blockchain'],
     links: [],
   },
   {
@@ -69,7 +75,8 @@ export const projects: Project[] = [
     description:
       "Mise en place de Services GenAI et d'une plateforme RAG pour L'Oréal.",
     category: 'pro',
-    tags: ["L'Oréal", 'GenAI'],
+    clients: ["L'Oréal"],
+    tags: ['GenAI'],
     links: [],
   },
   {
@@ -78,7 +85,8 @@ export const projects: Project[] = [
     description:
       "Pipeline d'extraction et structuration de documents pour alimenter des use cases GenAI.",
     category: 'pro',
-    tags: ['Crédit Mutuel', 'GenAI'],
+    clients: ['Crédit Mutuel'],
+    tags: ['GenAI'],
     links: [],
   },
   {
@@ -86,7 +94,8 @@ export const projects: Project[] = [
     title: 'Conversational AI Platform',
     description: "Plateforme d'assistants conversationnels et services GenAI pour CARDIF.",
     category: 'pro',
-    tags: ['CARDIF', 'GenAI'],
+    clients: ['CARDIF'],
+    tags: ['GenAI'],
     links: [],
   },
   {

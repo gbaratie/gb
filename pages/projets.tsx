@@ -4,6 +4,7 @@ import { Grid, Typography, Box } from '@mui/material';
 import Layout from '@/components/Layout';
 import { ProjectScopeTabs, type ProjectScope } from '@/components/ProjectScopeTabs';
 import ProjectCard from '@/components/ProjectCard';
+import ClientLogosCarousel from '@/components/ClientLogosCarousel';
 import { projects } from '@/data/projects';
 import { siteName } from '@/config/site';
 
@@ -64,6 +65,8 @@ export default function Projets() {
             ))}
           </Grid>
         )}
+
+        <ClientLogosCarousel />
       </Box>
 
       {/* Section 2 : Side projects */}

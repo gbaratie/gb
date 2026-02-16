@@ -35,8 +35,9 @@ Tout le contenu éditable se trouve dans **`data/`** et **`config/`** :
 | **`data/selection.ts`** | Items de la section « Initiatives inspirantes » (page Mes coups de cœur) : `title`, `description`, `tags`, `url`, optionnellement `image`. |
 | **`data/amis.ts`** | Items de la section « Projet de mes amis » (page Mes coups de cœur), même structure que la sélection. |
 | **`data/types.ts`** | Types TypeScript `Project` et `LinkItem` ; à consulter pour ajouter des champs. |
+| **`data/client-logos.ts`** | Logos des clients (carousel en bas de la page Projets). |
 
-**Images** : déposer les fichiers dans **`public/`**. En production avec sous-chemins (ex. GitHub Pages), le préfixe est géré par `lib/basePath.ts` et `NEXT_PUBLIC_BASE_PATH`.
+**Images** : déposer les fichiers dans **`public/`** (logos clients dans `public/clients/`, photos projets et coups de cœur dans `public/projets/`). En production avec sous-chemins (ex. GitHub Pages), le préfixe est géré par `lib/basePath.ts` et `NEXT_PUBLIC_BASE_PATH`.
 
 **Ajouter des photos aux coups de cœur (amis ou initiatives)** : dans `data/amis.ts` ou `data/selection.ts`, ajoutez pour chaque item la propriété optionnelle `image` :
 
@@ -47,21 +48,21 @@ import { basePath } from '@/lib/basePath';
 image: { src: `${basePath}/nom-fichier.jpg`, alt: 'Description courte pour l’accessibilité' }
 ```
 
-Placez le fichier (ex. `nom-fichier.jpg`) dans **`public/`**. Le composant `LinkCard` affichera l’image en en-tête de la carte.
+Placez le fichier (ex. `nom-fichier.jpg`) dans **`public/projets/`**. Le composant `LinkCard` affichera l’image en en-tête de la carte.
 
-**Thème** (couleurs, typo) : **`theme/theme.ts`**.
+**Thème** (couleurs, typo) : **`theme/index.ts`**.
 
 ## Structure du projet
 
 ```
 ├── .github/workflows/   # CI/CD (déploiement GitHub Pages)
-├── components/          # Layout, ProjectCard, LinkCard
+├── components/          # Layout, ProjectCard, LinkCard, ClientLogosCarousel, ProjectScopeTabs
 ├── config/              # site.ts (titre, nav)
-├── data/                # types, profile, projects, selection, amis
+├── data/                # types, profile, projects, selection, amis, client-logos
 ├── lib/                 # basePath
 ├── pages/               # index, projets, coups-de-coeur
-├── public/              # Assets statiques (images)
-└── theme/               # Thème MUI (dark)
+├── public/              # Assets : public/clients (logos), public/projets (photos)
+└── theme/               # Thème MUI (index.ts)
 ```
 
 ## Déploiement (GitHub Pages)

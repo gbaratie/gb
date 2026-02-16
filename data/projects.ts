@@ -106,7 +106,7 @@ export const projects: Project[] = [
     category: 'side',
     tags: ['JavaScript'],
     links: [{ label: 'Voir le projet', url: 'https://gbaratie.github.io/Sudoku/' }],
-    image: { src: `${basePath}/sudoku.png`, alt: 'Sudoku' },
+    image: { src: `${basePath}/projets/sudoku.png`, alt: 'Sudoku' },
   },
   {
     id: 'template-next-mui',
@@ -116,6 +116,6 @@ export const projects: Project[] = [
     category: 'side',
     tags: ['Next.js', 'React', 'MUI'],
     links: [{ label: 'Voir le template', url: 'https://gbaratie.github.io/front_sandbox_MUI/' }],
-    image: { src: `${basePath}/portfolio.png`, alt: 'Portfolio' },
+    image: { src: `${basePath}/projets/portfolio.png`, alt: 'Portfolio' },
   },
 ];

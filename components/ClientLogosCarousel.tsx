@@ -1,7 +1,7 @@
 import React from 'react';
 import { keyframes } from '@emotion/react';
 import { alpha, Box, Typography } from '@mui/material';
-import { clientLogos } from '@/data/clientLogos';
+import { clientLogos } from '@/data/client-logos';
 
 const scrollLogos = keyframes`
   0% { transform: translateX(0); }

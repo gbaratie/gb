@@ -1,7 +1,7 @@
 import { basePath } from '@/lib/basePath';
 import type { ClientLogo } from '@/data/types';
 
-const logos: ClientLogo[] = [
+export const clientLogos: ClientLogo[] = [
   { src: `${basePath}/clients/bnp-paribas.png`, alt: 'BNP Paribas' },
   { src: `${basePath}/clients/bpce.png`, alt: 'BPCE' },
   { src: `${basePath}/clients/carrefour.svg`, alt: 'Carrefour' },
@@ -13,5 +13,3 @@ const logos: ClientLogo[] = [
   { src: `${basePath}/clients/orange-bank.png`, alt: 'Orange Bank' },
   { src: `${basePath}/clients/rte.svg`, alt: 'RTE' },
 ];
-
-export { logos as clientLogos };

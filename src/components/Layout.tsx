@@ -20,7 +20,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { siteName, navItems } from '@/src/config/site';
 
-interface LayoutProps {
+export interface LayoutProps {
   children: React.ReactNode;
 }
 

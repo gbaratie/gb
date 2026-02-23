@@ -1,18 +1,29 @@
 import React from 'react';
 import { keyframes } from '@emotion/react';
-import { alpha, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { clientLogos } from '@/src/data/client-logos';
+import type { ClientLogo } from '@/src/data/types';
 
 const scrollLogos = keyframes`
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 `;
 
+export interface ClientLogosCarouselProps {
+  /** Titre affiché au-dessus du bandeau. Par défaut : "Quelques clients". */
+  title?: string;
+  /** Liste des logos à afficher. Par défaut : clientLogos du module data. */
+  logos?: ClientLogo[];
+}
+
 /**
  * Bandeau défilant des logos clients (carousel infini).
  */
-const ClientLogosCarousel: React.FC = () => {
-  if (clientLogos.length === 0) return null;
+const ClientLogosCarousel: React.FC<ClientLogosCarouselProps> = ({
+  title = 'Quelques clients',
+  logos = clientLogos,
+}) => {
+  if (logos.length === 0) return null;
 
   return (
     <Box sx={{ mt: 6 }}>
@@ -26,7 +37,7 @@ const ClientLogosCarousel: React.FC = () => {
           letterSpacing: 1,
         }}
       >
-        Quelques clients
+        {title}
       </Typography>
       <Box
         sx={{
@@ -46,7 +57,7 @@ const ClientLogosCarousel: React.FC = () => {
             animation: `${scrollLogos} 40s linear infinite`,
           }}
         >
-          {[...clientLogos, ...clientLogos].map((logo, index) => (
+          {[...logos, ...logos].map((logo, index) => (
             <Box
               key={`${logo.alt}-${index}`}
               sx={{

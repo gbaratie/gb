@@ -2,7 +2,7 @@ import { Tabs, Tab, Box } from '@mui/material';
 
 export type ProjectScope = 'pro' | 'side';
 
-interface ProjectScopeTabsProps {
+export interface ProjectScopeTabsProps {
   value: ProjectScope;
   onChange: (scope: ProjectScope) => void;
 }

@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import type { Project } from '@/src/data/types';
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   project: Project;
 }
 

@@ -1,22 +1,33 @@
 /**
- * Types partagés pour les projets et liens du site.
+ * Types partagés pour les projets, liens, profil et logos du site.
  */
+
+export type ClientLogo = {
+  src: string;
+  alt: string;
+};
+
+export type Profile = {
+  name: string;
+  headline: string;
+  bio: string;
+};
 
 export type ProjectCategory = 'pro' | 'side';
 
-export interface ProjectLink {
+export type ProjectLink = {
   label: string;
   url: string;
-}
+};
 
-export interface ImageRef {
+export type ImageRef = {
   src: string;
   alt: string;
   /** Couleur de fond optionnelle (ex: 'white' pour logos sur fond transparent) */
   background?: string;
-}
+};
 
-export interface Project {
+export type Project = {
   id: string;
   title: string;
   description: string;
@@ -27,9 +38,9 @@ export interface Project {
   tags: string[];
   links?: ProjectLink[];
   image?: ImageRef;
-}
+};
 
-export interface LinkItem {
+export type LinkItem = {
   id: string;
   title: string;
   description: string;
@@ -38,4 +49,4 @@ export interface LinkItem {
   /** URL optionnelle pour un bouton « Acheter » (ex. page boutique). */
   buyUrl?: string;
   image?: ImageRef;
-}
+};

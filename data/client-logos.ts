@@ -1,9 +1,5 @@
 import { basePath } from '@/lib/basePath';
-
-export interface ClientLogo {
-  src: string;
-  alt: string;
-}
+import type { ClientLogo } from '@/data/types';
 
 const logos: ClientLogo[] = [
   { src: `${basePath}/clients/bnp-paribas.png`, alt: 'BNP Paribas' },

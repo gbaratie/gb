@@ -19,7 +19,12 @@ const ClientLogosCarousel: React.FC = () => {
       <Typography
         variant="subtitle2"
         color="text.secondary"
-        sx={{ textAlign: 'center', mb: 2, textTransform: 'uppercase', letterSpacing: 1 }}
+        sx={{
+          textAlign: 'center',
+          mb: 2,
+          textTransform: 'uppercase',
+          letterSpacing: 1,
+        }}
       >
         Quelques clients
       </Typography>

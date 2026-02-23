@@ -50,7 +50,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      <AppBar position="fixed" color="primary" elevation={0} sx={{ borderBottom: '1px solid', borderColor: 'rgba(255,255,255,0.1)' }}>
+      <AppBar
+        position="fixed"
+        color="primary"
+        elevation={0}
+        sx={{ borderBottom: '1px solid', borderColor: 'rgba(255,255,255,0.1)' }}
+      >
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             {siteName}

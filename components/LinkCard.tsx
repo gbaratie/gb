@@ -44,7 +44,9 @@ const LinkCard: React.FC<LinkCardProps> = ({ item }) => {
           sx={{ objectFit: 'cover' }}
         />
       )}
-      <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+      <CardContent
+        sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+      >
         <Stack direction="row" spacing={1} sx={{ mb: 1 }} flexWrap="wrap">
           {tags.map((tag) => (
             <Chip key={tag} label={tag} size="small" variant="outlined" />

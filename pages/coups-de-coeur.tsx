@@ -24,16 +24,23 @@ export default function CoupsDeCoeur() {
         Mes coups de cœur
       </Typography>
       <Typography variant="body1" color="text.secondary" paragraph>
-        Initiatives et projets auxquels je prête attention ou que j’aime mettre en avant.
+        Initiatives et projets auxquels je prête attention ou que j’aime mettre
+        en avant.
       </Typography>
 
       {/* Section 1 : Initiatives inspirantes */}
       <Box component="section" sx={{ mt: 6 }}>
-        <Typography variant="h3" component="h2" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600 }}>
+        <Typography
+          variant="h3"
+          component="h2"
+          gutterBottom
+          sx={{ fontSize: '1.5rem', fontWeight: 600 }}
+        >
           Initiatives inspirantes
         </Typography>
         <Typography variant="body2" color="text.secondary" paragraph>
-          Plateformes et initiatives que je soutiens : impact, énergie, solidarité.
+          Plateformes et initiatives que je soutiens : impact, énergie,
+          solidarité.
         </Typography>
         <Grid container spacing={3}>
           {selectionItems.map((item) => (
@@ -46,11 +53,16 @@ export default function CoupsDeCoeur() {
 
       {/* Section 2 : Projet de mes amis */}
       <Box component="section" sx={{ mt: 8 }}>
-        <Typography variant="h3" component="h2" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600 }}>
+        <Typography
+          variant="h3"
+          component="h2"
+          gutterBottom
+          sx={{ fontSize: '1.5rem', fontWeight: 600 }}
+        >
           Projets de mes amis
         </Typography>
         <Typography variant="body2" color="text.secondary" paragraph>
-          Projets de mes amis et ma famille : A consommer sans modération 
+          Projets de mes amis et ma famille : A consommer sans modération
         </Typography>
         <Grid container spacing={3}>
           {amisItems.map((item) => (

@@ -1,5 +1,12 @@
 import Head from 'next/head';
-import { Box, Button, Typography, Grid, Card, CardContent } from '@mui/material';
+import {
+  Box,
+  Button,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+} from '@mui/material';
 import Link from 'next/link';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -25,18 +32,32 @@ export default function Home() {
       </Head>
 
       {/* Hero */}
-      <Box sx={{ textAlign: { xs: 'center', md: 'left' }, mb: { xs: 6, md: 10 } }}>
+      <Box
+        sx={{ textAlign: { xs: 'center', md: 'left' }, mb: { xs: 6, md: 10 } }}
+      >
         <Typography variant="h1" component="h1" gutterBottom>
           {profile.name}
         </Typography>
         <Typography variant="h5" color="primary" gutterBottom>
           {profile.headline}
         </Typography>
-        <Typography variant="body1" color="text.secondary" paragraph sx={{ maxWidth: 560 }}>
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          paragraph
+          sx={{ maxWidth: 560 }}
+        >
           {profile.bio}
         </Typography>
-        <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' } }}>
-
+        <Box
+          sx={{
+            display: 'flex',
+            gap: 2,
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: { xs: 'center', md: 'flex-start' },
+          }}
+        >
           <Button
             variant="outlined"
             color="primary"
@@ -65,7 +86,12 @@ export default function Home() {
       </Box>
 
       {/* 2 teasers */}
-      <Typography variant="h2" component="h2" gutterBottom sx={{ mb: 4, mt: 1 }}>
+      <Typography
+        variant="h2"
+        component="h2"
+        gutterBottom
+        sx={{ mb: 4, mt: 1 }}
+      >
         Découvrir
       </Typography>
       <Grid container spacing={3}>
@@ -76,10 +102,16 @@ export default function Home() {
                 Projets
               </Typography>
               <Typography variant="body2" color="text.secondary" paragraph>
-                Projets professionnels et side projects : Conseil en nouvelles technologies et projets personnels.
+                Projets professionnels et side projects : Conseil en nouvelles
+                technologies et projets personnels.
               </Typography>
               <Link href="/projets" passHref legacyBehavior>
-                <Button variant="outlined" color="primary" component="a" size="small">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  component="a"
+                  size="small"
+                >
                   Voir les projets
                 </Button>
               </Link>
@@ -96,7 +128,12 @@ export default function Home() {
                 Initiatives inspirantes et projets de mes amis
               </Typography>
               <Link href="/coups-de-coeur" passHref legacyBehavior>
-                <Button variant="outlined" color="primary" component="a" size="small">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  component="a"
+                  size="small"
+                >
                   Voir mes coups de cœur
                 </Button>
               </Link>

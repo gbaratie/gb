@@ -57,8 +57,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           />
         </Box>
       )}
-      <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-        <Stack direction="row" spacing={1} sx={{ mb: 1 }} flexWrap="wrap" useFlexGap>
+      <CardContent
+        sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+      >
+        <Stack
+          direction="row"
+          spacing={1}
+          sx={{ mb: 1 }}
+          flexWrap="wrap"
+          useFlexGap
+        >
           {clients?.map((client) => (
             <Chip
               key={client}

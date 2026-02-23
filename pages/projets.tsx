@@ -2,7 +2,10 @@ import Head from 'next/head';
 import { useState, useMemo } from 'react';
 import { Grid, Typography, Box } from '@mui/material';
 import Layout from '@/components/Layout';
-import { ProjectScopeTabs, type ProjectScope } from '@/components/ProjectScopeTabs';
+import {
+  ProjectScopeTabs,
+  type ProjectScope,
+} from '@/components/ProjectScopeTabs';
 import ProjectCard from '@/components/ProjectCard';
 import ClientLogosCarousel from '@/components/ClientLogosCarousel';
 import { projects } from '@/data/projects';
@@ -46,11 +49,17 @@ export default function Projets() {
 
       {/* Section 1 : Projets professionnels */}
       <Box component="section" id="pro" sx={{ mt: 6, scrollMarginTop: 80 }}>
-        <Typography variant="h3" component="h2" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600 }}>
+        <Typography
+          variant="h3"
+          component="h2"
+          gutterBottom
+          sx={{ fontSize: '1.5rem', fontWeight: 600 }}
+        >
           Projets professionnels
         </Typography>
         <Typography variant="body2" color="text.secondary" paragraph>
-          Réalisations en entreprise : agents conversationnels, blockchain, GenAI.
+          Réalisations en entreprise : agents conversationnels, blockchain,
+          GenAI.
         </Typography>
         {proProjects.length === 0 ? (
           <Typography variant="body2" color="text.secondary">
@@ -71,7 +80,12 @@ export default function Projets() {
 
       {/* Section 2 : Side projects */}
       <Box component="section" id="side" sx={{ mt: 8, scrollMarginTop: 80 }}>
-        <Typography variant="h3" component="h2" gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 600 }}>
+        <Typography
+          variant="h3"
+          component="h2"
+          gutterBottom
+          sx={{ fontSize: '1.5rem', fontWeight: 600 }}
+        >
           Side projects
         </Typography>
         <Typography variant="body2" color="text.secondary" paragraph>

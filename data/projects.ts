@@ -17,7 +17,8 @@ export const projects: Project[] = [
   {
     id: 'email-analyser-bpce',
     title: 'Email Analyser',
-    description: "Solution d'analyse et de traitement des emails pour le groupe BPCE.",
+    description:
+      "Solution d'analyse et de traitement des emails pour le groupe BPCE.",
     category: 'pro',
     clients: ['BPCE'],
     tags: ['Machine Learning'],
@@ -46,7 +47,7 @@ export const projects: Project[] = [
     id: 'tracabilite-energie',
     title: "Traçabilité de l'énergie",
     description:
-      "Développement de solutions blockchain pour assurer la traçabilité et la transparence des mécanismes de marché dans le secteur énergétique.",
+      'Développement de solutions blockchain pour assurer la traçabilité et la transparence des mécanismes de marché dans le secteur énergétique.',
     category: 'pro',
     clients: ['RTE', 'Enedis'],
     tags: ['Blockchain'],
@@ -55,7 +56,8 @@ export const projects: Project[] = [
   {
     id: 'registre-commercial-blockchain',
     title: 'Registre commercial sur blockchain',
-    description: "Implémentation d’une architecture blockchain assurant l’hébergement et l’intégrité de registres commerciaux administrés par le CNGTC.",
+    description:
+      'Implémentation d’une architecture blockchain assurant l’hébergement et l’intégrité de registres commerciaux administrés par le CNGTC.',
     category: 'pro',
     clients: ['CNGTC'],
     tags: ['Blockchain'],
@@ -64,7 +66,8 @@ export const projects: Project[] = [
   {
     id: 'quantum-safe-bancaire',
     title: 'Quantum Safe pour le monde bancaire',
-    description: "Étude et préparation à la cryptographie post-quantum dans le secteur bancaire.",
+    description:
+      'Étude et préparation à la cryptographie post-quantum dans le secteur bancaire.',
     category: 'pro',
     tags: ['Quantum'],
     links: [],
@@ -92,7 +95,8 @@ export const projects: Project[] = [
   {
     id: 'conversational-ai-cardif',
     title: 'Conversational AI Platform',
-    description: "Plateforme d'assistants conversationnels et services GenAI pour CARDIF.",
+    description:
+      "Plateforme d'assistants conversationnels et services GenAI pour CARDIF.",
     category: 'pro',
     clients: ['CARDIF'],
     tags: ['GenAI'],
@@ -105,42 +109,59 @@ export const projects: Project[] = [
       "Application web pour générer et jouer au Sudoku. Projet side pour pratiquer la logique et l'interface utilisateur.",
     category: 'side',
     tags: ['JavaScript'],
-    links: [{ label: 'Voir le projet', url: 'https://gbaratie.github.io/Sudoku/' }],
+    links: [
+      { label: 'Voir le projet', url: 'https://gbaratie.github.io/Sudoku/' },
+    ],
     image: { src: `${basePath}/projets/sudoku.png`, alt: 'Sudoku' },
   },
   {
     id: 'template-next-mui',
     title: 'Template Next.js + MUI',
     description:
-      "Template pour créer rapidement des sites vitrines en React, Next.js et Material UI. Base du présent portfolio.",
+      'Template pour créer rapidement des sites vitrines en React, Next.js et Material UI. Base du présent portfolio.',
     category: 'side',
     tags: ['Next.js', 'React', 'MUI'],
-    links: [{ label: 'Voir le template', url: 'https://gbaratie.github.io/front_sandbox_MUI/' }],
+    links: [
+      {
+        label: 'Voir le template',
+        url: 'https://gbaratie.github.io/front_sandbox_MUI/',
+      },
+    ],
     image: { src: `${basePath}/projets/portfolio.png`, alt: 'Portfolio' },
-  },{
+  },
+  {
     id: 'PSL-Dauphine',
     title: 'Professeur à Dauphine',
     description:
-      "Animation d’un enseignement orienté sur les technologies de la 4ème révolution industrielle (IA, IoT, Blockchain, Big Data, Cloud) un semestre par an pour une classe de Master 2",
+      'Animation d’un enseignement orienté sur les technologies de la 4ème révolution industrielle (IA, IoT, Blockchain, Big Data, Cloud) un semestre par an pour une classe de Master 2',
     category: 'side',
     tags: ['Enseignement', 'New technologies'],
     image: { src: `${basePath}/projets/dauphine.jpg`, alt: 'Dauphine' },
-  },{
+  },
+  {
     id: 'isep',
     title: 'Administrateur ISEP',
-    description:
-      "Membre du conseil d'administration de l'ISEP.",
+    description: "Membre du conseil d'administration de l'ISEP.",
     category: 'side',
     tags: ['Enseignement', 'CA'],
-    image: { src: `${basePath}/projets/isep.png`, alt: 'Isep', background: 'white' },
-  },{
+    image: {
+      src: `${basePath}/projets/isep.png`,
+      alt: 'Isep',
+      background: 'white',
+    },
+  },
+  {
     id: 'tdm',
     title: 'Tour du Monde',
-    description:
-      "Voyage autour du monde en 2022-2023",
+    description: 'Voyage autour du monde en 2022-2023',
     category: 'side',
     tags: ['Voyage'],
-    links: [{ label: 'Voir le voyage', url: 'https://www.polarsteps.com/GuillaumeBaratier/5510476-world-trip-2022' }],
+    links: [
+      {
+        label: 'Voir le voyage',
+        url: 'https://www.polarsteps.com/GuillaumeBaratier/5510476-world-trip-2022',
+      },
+    ],
     image: { src: `${basePath}/projets/tdm.png`, alt: 'TDM' },
   },
 ];

@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import type { LinkItem } from '@/data/types';
+import type { LinkItem } from '@/src/data/types';
 
 interface LinkCardProps {
   item: LinkItem;

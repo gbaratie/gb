@@ -1,6 +1,6 @@
-import type { LinkItem } from '@/data/types';
+import type { LinkItem } from '@/src/data/types';
 
-export type { LinkItem } from '@/data/types';
+export type { LinkItem } from '@/src/data/types';
 
 /**
  * Sélection de sites et initiatives (liens externes).

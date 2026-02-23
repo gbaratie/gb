@@ -2,7 +2,7 @@
  * Profil court pour la page /profil et l’accueil.
  */
 
-import type { Profile } from '@/data/types';
+import type { Profile } from '@/src/data/types';
 
 export const profile: Profile = {
   name: 'Guillaume Baratier',

@@ -10,9 +10,9 @@ import {
 import Link from 'next/link';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import Layout from '@/components/Layout';
-import { siteName } from '@/config/site';
-import { profile } from '@/data/profile';
+import Layout from '@/src/components/Layout';
+import { siteName } from '@/src/config/site';
+import { profile } from '@/src/data/profile';
 
 const GITHUB_URL = 'https://github.com/gbaratie';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/gbaratier/';

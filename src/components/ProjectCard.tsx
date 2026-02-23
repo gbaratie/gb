@@ -8,7 +8,7 @@ import {
   Stack,
   Box,
 } from '@mui/material';
-import type { Project } from '@/data/types';
+import type { Project } from '@/src/data/types';
 
 interface ProjectCardProps {
   project: Project;

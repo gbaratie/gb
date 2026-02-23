@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import { Grid, Typography, Box } from '@mui/material';
-import Layout from '@/components/Layout';
-import LinkCard from '@/components/LinkCard';
-import { selectionItems } from '@/data/selection';
-import { amisItems } from '@/data/amis';
-import { siteName } from '@/config/site';
+import Layout from '@/src/components/Layout';
+import LinkCard from '@/src/components/LinkCard';
+import { selectionItems } from '@/src/data/selection';
+import { amisItems } from '@/src/data/amis';
+import { siteName } from '@/src/config/site';
 
 /**
  * Page Mes coups de cœur : deux sections — Initiatives inspirantes & Projet de mes amis.

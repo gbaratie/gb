@@ -1,5 +1,5 @@
-import type { LinkItem } from '@/data/types';
-import { basePath } from '@/lib/basePath';
+import type { LinkItem } from '@/src/data/types';
+import { basePath } from '@/src/config/basePath';
 /**
  * Liens « Projet de mes amis » — projets et partenaires (page Mes coups de cœur).
  *

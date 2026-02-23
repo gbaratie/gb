@@ -18,7 +18,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { siteName, navItems } from '@/config/site';
+import { siteName, navItems } from '@/src/config/site';
 
 interface LayoutProps {
   children: React.ReactNode;

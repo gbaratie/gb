@@ -1,15 +1,15 @@
 import Head from 'next/head';
 import { useState, useMemo } from 'react';
 import { Grid, Typography, Box } from '@mui/material';
-import Layout from '@/components/Layout';
+import Layout from '@/src/components/Layout';
 import {
   ProjectScopeTabs,
   type ProjectScope,
-} from '@/components/ProjectScopeTabs';
-import ProjectCard from '@/components/ProjectCard';
-import ClientLogosCarousel from '@/components/ClientLogosCarousel';
-import { projects } from '@/data/projects';
-import { siteName } from '@/config/site';
+} from '@/src/components/ProjectScopeTabs';
+import ProjectCard from '@/src/components/ProjectCard';
+import ClientLogosCarousel from '@/src/components/ClientLogosCarousel';
+import { projects } from '@/src/data/projects';
+import { siteName } from '@/src/config/site';
 
 /**
  * Page Projets : onglets Pro / Side (ProjectScopeTabs), deux sections avec scroll par ancre.

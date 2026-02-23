@@ -1,7 +1,7 @@
-import type { Project } from '@/data/types';
-import { basePath } from '@/lib/basePath';
+import type { Project } from '@/src/data/types';
+import { basePath } from '@/src/config/basePath';
 
-export type { Project } from '@/data/types';
+export type { Project } from '@/src/data/types';
 
 export const projects: Project[] = [
   {

@@ -49,12 +49,7 @@ export default function Projets() {
 
       {/* Section 1 : Projets professionnels */}
       <Box component="section" id="pro" sx={{ mt: 6, scrollMarginTop: 80 }}>
-        <Typography
-          variant="h3"
-          component="h2"
-          gutterBottom
-          sx={{ fontSize: '1.5rem', fontWeight: 600 }}
-        >
+        <Typography variant="h3" component="h2" gutterBottom>
           Projets professionnels
         </Typography>
         <Typography variant="body2" color="text.secondary" paragraph>
@@ -80,12 +75,7 @@ export default function Projets() {
 
       {/* Section 2 : Side projects */}
       <Box component="section" id="side" sx={{ mt: 8, scrollMarginTop: 80 }}>
-        <Typography
-          variant="h3"
-          component="h2"
-          gutterBottom
-          sx={{ fontSize: '1.5rem', fontWeight: 600 }}
-        >
+        <Typography variant="h3" component="h2" gutterBottom>
           Side projects
         </Typography>
         <Typography variant="body2" color="text.secondary" paragraph>

@@ -36,7 +36,7 @@ const ClientLogosCarousel: React.FC = () => {
           borderTop: 1,
           borderBottom: 1,
           borderColor: 'divider',
-          bgcolor: '#D4DBEB',
+          bgcolor: 'background.logoStrip',
         }}
       >
         <Box

@@ -30,12 +30,7 @@ export default function CoupsDeCoeur() {
 
       {/* Section 1 : Initiatives inspirantes */}
       <Box component="section" sx={{ mt: 6 }}>
-        <Typography
-          variant="h3"
-          component="h2"
-          gutterBottom
-          sx={{ fontSize: '1.5rem', fontWeight: 600 }}
-        >
+        <Typography variant="h3" component="h2" gutterBottom>
           Initiatives inspirantes
         </Typography>
         <Typography variant="body2" color="text.secondary" paragraph>
@@ -53,12 +48,7 @@ export default function CoupsDeCoeur() {
 
       {/* Section 2 : Projet de mes amis */}
       <Box component="section" sx={{ mt: 8 }}>
-        <Typography
-          variant="h3"
-          component="h2"
-          gutterBottom
-          sx={{ fontSize: '1.5rem', fontWeight: 600 }}
-        >
+        <Typography variant="h3" component="h2" gutterBottom>
           Projets de mes amis
         </Typography>
         <Typography variant="body2" color="text.secondary" paragraph>

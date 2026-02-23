@@ -54,7 +54,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         position="fixed"
         color="primary"
         elevation={0}
-        sx={{ borderBottom: '1px solid', borderColor: 'rgba(255,255,255,0.1)' }}
+        sx={{ borderBottom: '1px solid', borderColor: 'divider' }}
       >
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>

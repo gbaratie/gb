@@ -2,12 +2,12 @@ import Head from 'next/head';
 import { useState, useMemo } from 'react';
 import { Grid, Typography, Box } from '@mui/material';
 import Layout from '@/src/components/Layout';
+import ClientLogosCarousel from '@/src/components/ClientLogosCarousel';
 import {
   ProjectScopeTabs,
   type ProjectScope,
-} from '@/src/components/ProjectScopeTabs';
-import ProjectCard from '@/src/components/ProjectCard';
-import ClientLogosCarousel from '@/src/components/ClientLogosCarousel';
+} from '@/src/components/projets/ProjectScopeTabs';
+import ProjectCard from '@/src/components/projets/ProjectCard';
 import { projects } from '@/src/data/projects';
 import { siteName } from '@/src/config/site';
 

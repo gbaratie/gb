@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Grid, Typography, Box } from '@mui/material';
 import Layout from '@/src/components/Layout';
-import LinkCard from '@/src/components/LinkCard';
+import LinkCard from '@/src/components/coups-de-coeur/LinkCard';
 import { selectionItems } from '@/src/data/selection';
 import { amisItems } from '@/src/data/amis';
 import { siteName } from '@/src/config/site';

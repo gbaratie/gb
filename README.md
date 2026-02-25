@@ -14,12 +14,12 @@ Ouvrez [http://localhost:3000](http://localhost:3000).
 
 ## Scripts
 
-| Commande          | Description                                          |
-|-------------------|------------------------------------------------------|
-| `npm run dev`     | Serveur de développement                             |
-| `npm run build`   | Build de production → génère le dossier `out/`       |
-| `npm run lint`    | Vérification ESLint                                  |
-| `npm run deploy`  | Build puis push de `out/` vers GitHub Pages (manuel) |
+| Commande         | Description                                          |
+| ---------------- | ---------------------------------------------------- |
+| `npm run dev`    | Serveur de développement                             |
+| `npm run build`  | Build de production → génère le dossier `out/`       |
+| `npm run lint`   | Vérification ESLint                                  |
+| `npm run deploy` | Build puis push de `out/` vers GitHub Pages (manuel) |
 
 > **Note :** `npm run start` n’est pas utilisé pour ce projet. Avec `output: export`, Next.js génère des fichiers statiques. Pour tester en local après un build : `npx serve@latest out`.
 
@@ -27,15 +27,15 @@ Ouvrez [http://localhost:3000](http://localhost:3000).
 
 Tout le contenu éditable se trouve dans **`data/`** et **`config/`** :
 
-| Fichier | Rôle |
-|---------|------|
-| **`config/site.ts`** | Nom du site, libellés et URLs de la navigation (Accueil, Projets, Mes coups de cœur). |
-| **`data/profile.ts`** | Nom, headline et bio courte (affichés sur l’accueil). |
-| **`data/projects.ts`** | Liste des projets. Chaque projet : `title`, `description`, `category` (`'pro'` ou `'side'`), `tags`, optionnellement `links` (label + url) et `image` (src + alt). |
-| **`data/selection.ts`** | Items de la section « Initiatives inspirantes » (page Mes coups de cœur) : `title`, `description`, `tags`, `url`, optionnellement `image`. |
-| **`data/amis.ts`** | Items de la section « Projet de mes amis » (page Mes coups de cœur), même structure que la sélection. |
-| **`data/types.ts`** | Types TypeScript `Project` et `LinkItem` ; à consulter pour ajouter des champs. |
-| **`data/client-logos.ts`** | Logos des clients (carousel en bas de la page Projets). |
+| Fichier                    | Rôle                                                                                                                                                               |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`config/site.ts`**       | Nom du site, libellés et URLs de la navigation (Accueil, Projets, Mes coups de cœur).                                                                              |
+| **`data/profile.ts`**      | Nom, headline et bio courte (affichés sur l’accueil).                                                                                                              |
+| **`data/projects.ts`**     | Liste des projets. Chaque projet : `title`, `description`, `category` (`'pro'` ou `'side'`), `tags`, optionnellement `links` (label + url) et `image` (src + alt). |
+| **`data/selection.ts`**    | Items de la section « Initiatives inspirantes » (page Mes coups de cœur) : `title`, `description`, `tags`, `url`, optionnellement `image`.                         |
+| **`data/amis.ts`**         | Items de la section « Projet de mes amis » (page Mes coups de cœur), même structure que la sélection.                                                              |
+| **`data/types.ts`**        | Types TypeScript `Project` et `LinkItem` ; à consulter pour ajouter des champs.                                                                                    |
+| **`data/client-logos.ts`** | Logos des clients (carousel en bas de la page Projets).                                                                                                            |
 
 **Images** : déposer les fichiers dans **`public/`** (logos clients dans `public/clients/`, photos projets et coups de cœur dans `public/projets/`). En production avec sous-chemins (ex. GitHub Pages), le préfixe est géré par `lib/basePath.ts` et `NEXT_PUBLIC_BASE_PATH`.
 

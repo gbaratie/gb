@@ -112,7 +112,7 @@ export const projects: Project[] = [
     links: [
       { label: 'Voir le projet', url: 'https://gbaratie.github.io/Sudoku/' },
     ],
-    image: { src: `${basePath}/projets/sudoku.png`, alt: 'Sudoku' },
+    image: { src: `${basePath}/images/projets/sudoku.png`, alt: 'Sudoku' },
   },
   {
     id: 'template-next-mui',
@@ -127,7 +127,7 @@ export const projects: Project[] = [
         url: 'https://gbaratie.github.io/front_sandbox_MUI/',
       },
     ],
-    image: { src: `${basePath}/projets/portfolio.png`, alt: 'Portfolio' },
+    image: { src: `${basePath}/images/projets/portfolio.png`, alt: 'Portfolio' },
   },
   {
     id: 'PSL-Dauphine',
@@ -136,7 +136,7 @@ export const projects: Project[] = [
       'Animation d’un enseignement orienté sur les technologies de la 4ème révolution industrielle (IA, IoT, Blockchain, Big Data, Cloud) un semestre par an pour une classe de Master 2',
     category: 'side',
     tags: ['Enseignement', 'New technologies'],
-    image: { src: `${basePath}/projets/dauphine.jpg`, alt: 'Dauphine' },
+    image: { src: `${basePath}/images/projets/dauphine.jpg`, alt: 'Dauphine' },
   },
   {
     id: 'isep',
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     category: 'side',
     tags: ['Enseignement', 'CA'],
     image: {
-      src: `${basePath}/projets/isep.png`,
+      src: `${basePath}/images/projets/isep.png`,
       alt: 'Isep',
       background: 'white',
     },
@@ -162,6 +162,6 @@ export const projects: Project[] = [
         url: 'https://www.polarsteps.com/GuillaumeBaratier/5510476-world-trip-2022',
       },
     ],
-    image: { src: `${basePath}/projets/tdm.png`, alt: 'TDM' },
+    image: { src: `${basePath}/images/projets/tdm.png`, alt: 'TDM' },
   },
 ];

@@ -1,8 +1,7 @@
 import { createTheme } from '@mui/material/styles';
 
 /**
- * Thème sombre pour le site portfolio.
- * Fond non blanc, contraste lisible, bordures et élévations subtiles.
+ * Thème sombre du site portfolio : fond non blanc, contraste lisible, bordures et élévations subtiles.
  */
 const theme = createTheme({
   palette: {

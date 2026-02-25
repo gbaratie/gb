@@ -17,7 +17,7 @@ export interface LinkCardProps {
 }
 
 /**
- * Carte pour un lien externe (Sélection / Amis) : titre, description, tags, bouton vers l'URL.
+ * Carte pour un lien externe (Sélection / Amis) : titre, description, tags, bouton vers l’URL.
  */
 const LinkCard: React.FC<LinkCardProps> = ({ item }) => {
   const { title, description, tags, url, buyUrl, image } = item;

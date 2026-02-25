@@ -1,6 +1,5 @@
 /**
- * Configuration centrale du site : titre, navigation.
- * Modifier ces valeurs pour adapter le site à votre projet.
+ * Configuration centrale du site (titre, navigation). Modifier ces valeurs pour adapter le site à votre projet.
  */
 
 export const siteName =

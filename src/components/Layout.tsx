@@ -30,8 +30,7 @@ function getTabValueFromPath(pathname: string): number {
 }
 
 /**
- * Layout principal : barre de navigation persistante et conteneur.
- * En mobile : menu burger. En desktop : onglets.
+ * Layout principal : barre de navigation persistante et conteneur. En mobile : menu burger ; en desktop : onglets.
  */
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const router = useRouter();

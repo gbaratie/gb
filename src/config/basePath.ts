@@ -1,6 +1,6 @@
 /**
- * Base path for assets (images, etc.) in production.
- * Override via NEXT_PUBLIC_BASE_PATH; fallback matches next.config.js for GitHub Pages.
+ * Chemin de base des assets (images, etc.) en production.
+ * Surcharge possible via NEXT_PUBLIC_BASE_PATH ; valeur par défaut alignée sur next.config.js (ex. GitHub Pages).
  */
 const defaultProductionPath =
   process.env.NODE_ENV === 'production' ? '/gb' : '';

@@ -1,5 +1,5 @@
 /**
- * Profil court pour la page /profil et l’accueil.
+ * Profil court pour l’accueil et les métadonnées du site.
  */
 
 import type { Profile } from '@/src/data/types';

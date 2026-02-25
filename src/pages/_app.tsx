@@ -4,10 +4,9 @@ import { ThemeProvider, CssBaseline } from '@mui/material';
 import theme from '@/src/config';
 
 /**
- * Custom App component used by Next.js to initialize pages.
- * It wraps every page with the MUI ThemeProvider and injects
- * baseline styles. The site title and description can be overridden
- * within individual pages via Head.
+ * Composant App personnalisé utilisé par Next.js pour initialiser les pages.
+ * Enveloppe chaque page avec le ThemeProvider MUI et injecte les styles de base.
+ * Le titre et la description du site peuvent être surchargés dans chaque page via Head.
  */
 function MyApp({ Component, pageProps }: AppProps) {
   return (

@@ -127,7 +127,10 @@ export const projects: Project[] = [
         url: 'https://gbaratie.github.io/front_sandbox_MUI/',
       },
     ],
-    image: { src: `${basePath}/images/projets/portfolio.png`, alt: 'Portfolio' },
+    image: {
+      src: `${basePath}/images/projets/portfolio.png`,
+      alt: 'Portfolio',
+    },
   },
   {
     id: 'PSL-Dauphine',

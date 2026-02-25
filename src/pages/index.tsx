@@ -18,7 +18,7 @@ const GITHUB_URL = 'https://github.com/gbaratie';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/gbaratier/';
 
 /**
- * Accueil : hero avec 2 CTA, puis 3 sections teaser (Projets, Sélection, Amis).
+ * Page d’accueil : section hero (titre, bio, CTA), puis section Découvrir avec deux teasers (Projets, Mes coups de cœur).
  */
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
         />
       </Head>
 
-      {/* Hero */}
+      {/* Section hero (titre, bio, CTA) */}
       <Box
         sx={{ textAlign: { xs: 'center', md: 'left' }, mb: { xs: 6, md: 10 } }}
       >
@@ -85,7 +85,7 @@ export default function Home() {
         </Box>
       </Box>
 
-      {/* 2 teasers */}
+      {/* Section Découvrir (teasers Projets / Coups de cœur) */}
       <Typography
         variant="h2"
         component="h2"

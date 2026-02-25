@@ -4,7 +4,7 @@ export type { LinkItem } from '@/src/data/types';
 
 /**
  * Sélection de sites et initiatives (liens externes).
- * Modifier ce fichier pour mettre à jour la page /selection.
+ * Modifier ce fichier pour mettre à jour la page Mes coups de cœur (/coups-de-coeur).
  */
 export const selectionItems: LinkItem[] = [
   {

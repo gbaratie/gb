@@ -10,9 +10,9 @@ const scrollLogos = keyframes`
 `;
 
 export interface ClientLogosCarouselProps {
-  /** Titre affiché au-dessus du bandeau. Par défaut : "Quelques clients". */
+  /** Titre affiché au-dessus du bandeau (défaut : « Quelques clients »). */
   title?: string;
-  /** Liste des logos à afficher. Par défaut : clientLogos du module data. */
+  /** Liste des logos à afficher (défaut : clientLogos du module data). */
   logos?: ClientLogo[];
 }
 

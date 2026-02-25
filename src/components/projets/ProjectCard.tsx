@@ -15,7 +15,7 @@ export interface ProjectCardProps {
 }
 
 /**
- * Carte projet : titre, description, clients (style distinct), technos, image optionnelle, liens.
+ * Carte projet : titre, description, clients (style distinct), technos, image optionnelle et liens.
  */
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { title, description, clients, tags, links, image } = project;

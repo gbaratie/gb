@@ -7,7 +7,7 @@ import { amisItems } from '@/src/data/amis';
 import { siteName } from '@/src/config/site';
 
 /**
- * Page Mes coups de cœur : deux sections — Initiatives inspirantes & Projet de mes amis.
+ * Page Mes coups de cœur : deux sections (Initiatives inspirantes, Projets de mes amis).
  */
 export default function CoupsDeCoeur() {
   return (

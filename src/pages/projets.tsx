@@ -12,7 +12,7 @@ import { projects } from '@/src/data/projects';
 import { siteName } from '@/src/config/site';
 
 /**
- * Page Projets : onglets Pro / Side (ProjectScopeTabs), deux sections avec scroll par ancre.
+ * Page Projets : onglets Pro / Side projects, deux sections avec défilement par ancre.
  */
 export default function Projets() {
   const [scope, setScope] = useState<ProjectScope>('pro');
@@ -73,7 +73,7 @@ export default function Projets() {
         <ClientLogosCarousel />
       </Box>
 
-      {/* Section 2 : Side projects */}
+      {/* Section 2 : Projets personnels (side projects) */}
       <Box component="section" id="side" sx={{ mt: 8, scrollMarginTop: 80 }}>
         <Typography variant="h3" component="h2" gutterBottom>
           Side projects

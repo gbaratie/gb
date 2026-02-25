@@ -29,7 +29,10 @@ export const amisItems: LinkItem[] = [
     tags: ['spiritueux', 'rhum', 'Thaïlande'],
     url: 'https://chalongbayrum.com/en/home',
     buyUrl: 'https://chalongbay.fr/',
-    image: { src: `${basePath}/images/projets/chalong-bay.png`, alt: 'Chalong Bay' },
+    image: {
+      src: `${basePath}/images/projets/chalong-bay.png`,
+      alt: 'Chalong Bay',
+    },
   },
   {
     id: 'saneha',

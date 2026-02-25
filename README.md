@@ -21,48 +21,54 @@ Ouvrez [http://localhost:3000](http://localhost:3000).
 | `npm run lint`   | Vérification ESLint                                  |
 | `npm run deploy` | Build puis push de `out/` vers GitHub Pages (manuel) |
 
-> **Note :** `npm run start` n’est pas utilisé pour ce projet. Avec `output: export`, Next.js génère des fichiers statiques. Pour tester en local après un build : `npx serve@latest out`.
+> **Note :** `npm run start` n'est pas utilisé pour ce projet. Avec `output: export`, Next.js génère des fichiers statiques. Pour tester en local après un build : `npx serve@latest out`.
 
 ## Modifier le contenu (data & config)
 
-Tout le contenu éditable se trouve dans **`data/`** et **`config/`** :
+Tout le contenu éditable se trouve dans **`src/config/`** et **`src/data/`** :
 
-| Fichier                    | Rôle                                                                                                                                                               |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`config/site.ts`**       | Nom du site, libellés et URLs de la navigation (Accueil, Projets, Mes coups de cœur).                                                                              |
-| **`data/profile.ts`**      | Nom, headline et bio courte (affichés sur l’accueil).                                                                                                              |
-| **`data/projects.ts`**     | Liste des projets. Chaque projet : `title`, `description`, `category` (`'pro'` ou `'side'`), `tags`, optionnellement `links` (label + url) et `image` (src + alt). |
-| **`data/selection.ts`**    | Items de la section « Initiatives inspirantes » (page Mes coups de cœur) : `title`, `description`, `tags`, `url`, optionnellement `image`.                         |
-| **`data/amis.ts`**         | Items de la section « Projet de mes amis » (page Mes coups de cœur), même structure que la sélection.                                                              |
-| **`data/types.ts`**        | Types TypeScript `Project` et `LinkItem` ; à consulter pour ajouter des champs.                                                                                    |
-| **`data/client-logos.ts`** | Logos des clients (carousel en bas de la page Projets).                                                                                                            |
+| Fichier                       | Rôle                                                                                                                                                               |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`src/config/site.ts`**      | Nom du site, libellés et URLs de la navigation (Accueil, Projets, Mes coups de cœur).                                                                              |
+| **`src/config/basePath.ts`**  | Chemin de base des assets en production (surcharge via `NEXT_PUBLIC_BASE_PATH`).                                                                                   |
+| **`src/data/profile.ts`**     | Nom, headline et bio courte (affichés sur l'accueil).                                                                                                              |
+| **`src/data/projects.ts`**    | Liste des projets. Chaque projet : `title`, `description`, `category` (`'pro'` ou `'side'`), `tags`, optionnellement `links` (label + url) et `image` (src + alt). |
+| **`src/data/selection.ts`**   | Items de la section « Initiatives inspirantes » (page Mes coups de cœur) : `title`, `description`, `tags`, `url`, optionnellement `image`.                         |
+| **`src/data/amis.ts`**        | Items de la section « Projet de mes amis » (page Mes coups de cœur), même structure que la sélection.                                                              |
+| **`src/data/types.ts`**       | Types TypeScript `Project`, `LinkItem`, `ClientLogo`, etc. ; à consulter pour ajouter des champs.                                                                  |
+| **`src/data/client-logos.ts`**| Logos des clients (carousel en bas de la page Projets).                                                                                                             |
 
-**Images** : déposer les fichiers dans **`public/`** (logos clients dans `public/clients/`, photos projets et coups de cœur dans `public/projets/`). En production avec sous-chemins (ex. GitHub Pages), le préfixe est géré par `lib/basePath.ts` et `NEXT_PUBLIC_BASE_PATH`.
+**Images** : déposer les fichiers dans **`public/images/`** — logos clients dans `public/images/clients/`, photos projets et coups de cœur dans `public/images/projets/`. En production avec sous-chemins (ex. GitHub Pages), le préfixe est géré par `src/config/basePath.ts` et `NEXT_PUBLIC_BASE_PATH`.
 
-**Ajouter des photos aux coups de cœur (amis ou initiatives)** : dans `data/amis.ts` ou `data/selection.ts`, ajoutez pour chaque item la propriété optionnelle `image` :
+**Ajouter des photos aux coups de cœur (amis ou initiatives)** : dans `src/data/amis.ts` ou `src/data/selection.ts`, ajoutez pour chaque item la propriété optionnelle `image` :
 
 ```ts
-import { basePath } from '@/lib/basePath';
+import { basePath } from '@/src/config/basePath';
 
 // Dans un item :
-image: { src: `${basePath}/nom-fichier.jpg`, alt: 'Description courte pour l’accessibilité' }
+image: { src: `${basePath}/images/projets/nom-fichier.jpg`, alt: 'Description courte pour l'accessibilité' }
 ```
 
-Placez le fichier (ex. `nom-fichier.jpg`) dans **`public/projets/`**. Le composant `LinkCard` affichera l’image en en-tête de la carte.
+Placez le fichier (ex. `nom-fichier.jpg`) dans **`public/images/projets/`**. Le composant `LinkCard` affichera l'image en en-tête de la carte.
 
-**Thème** (couleurs, typo) : **`theme/index.ts`**.
+**Thème** (couleurs, typo) : **`src/config/index.ts`** (thème MUI exporté par défaut).
 
 ## Structure du projet
 
 ```
-├── .github/workflows/   # CI/CD (déploiement GitHub Pages)
-├── components/          # Layout, ProjectCard, LinkCard, ClientLogosCarousel, ProjectScopeTabs
-├── config/              # site.ts (titre, nav)
-├── data/                # types, profile, projects, selection, amis, client-logos
-├── lib/                 # basePath
-├── pages/               # index, projets, coups-de-coeur
-├── public/              # Assets : public/clients (logos), public/projets (photos)
-└── theme/               # Thème MUI (index.ts)
+├── .github/workflows/     # CI/CD (déploiement GitHub Pages)
+├── public/
+│   └── images/            # Assets : clients/ (logos), projets/ (photos)
+├── src/
+│   ├── components/        # Composants réutilisables
+│   │   ├── Layout.tsx
+│   │   ├── ClientLogosCarousel.tsx
+│   │   ├── projets/       # ProjectCard, ProjectScopeTabs
+│   │   └── coups-de-coeur/# LinkCard
+│   ├── config/            # site.ts (titre, nav), basePath.ts, index.ts (thème MUI)
+│   ├── data/              # types, profile, projects, selection, amis, client-logos
+│   └── pages/             # _app, index, projets, coups-de-coeur
+└── next.config.js
 ```
 
 ## Déploiement (GitHub Pages)
@@ -78,7 +84,7 @@ Placez le fichier (ex. `nom-fichier.jpg`) dans **`public/projets/`**. Le composa
 - **Settings → Pages → Source** : **Deploy from a branch**, branche **gh-pages**, dossier **/ (root)**
 - En local : `npm run deploy` (build + push de `out/` sur la branche `gh-pages`)
 
-> Le `basePath` dans `next.config.js` doit correspondre à l’URL du dépôt (ex. `/gb`).
+> Le `basePath` dans `next.config.js` doit correspondre à l'URL du dépôt (ex. `/gb`).
 
 ## Prérequis
 
